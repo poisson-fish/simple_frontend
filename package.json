@@ -1,0 +1,29 @@
+{
+  "name": "readmegen",
+  "version": "1.0.0",
+  "description": "A generator for Github readmes",
+  "main": "src/script.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/udidifier/readmegen.git"
+  },
+  "author": "udidifier",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/udidifier/readmegen/issues"
+  },
+  "homepage": "https://github.com/udidifier/readmegen#readme",
+  "devDependencies": {
+    "eslint": "^8.17.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.2.2",
+    "eslint-plugin-promise": "^6.0.0"
+  },
+  "dependencies": {
+    "inquirer": "^9.0.2"
+  }
+}
