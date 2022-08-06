@@ -2,9 +2,11 @@
   "name": "readmegen",
   "version": "1.0.0",
   "description": "A generator for Github readmes",
+  "type": "module",
   "main": "src/script.js",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "run": "run"
   },
   "repository": {
     "type": "git",

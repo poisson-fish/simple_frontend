@@ -2,7 +2,7 @@
  * Input prompt example
  */
 
-import inquirer from '../lib/inquirer.js'
+import inquirer from 'inquirer'
 
 const questions = [
   {
@@ -20,23 +20,42 @@ const questions = [
   },
   {
     type: 'input',
-    name: 'fav_color',
-    message: "What's your favorite color"
+    name: 'installation_instructions',
+    message: 'Enter some instructions for installing'
   },
   {
     type: 'input',
-    name: 'phone',
-    message: "What's your phone number",
-    validate (value) {
-      const pass = value.match(
-        /^([01]{1})?[-.\s]?\(?(\d{3})\)?[-.\s]?(\d{3})[-.\s]?(\d{4})\s?((?:#|ext\.?\s?|x\.?\s?){1}(?:\d+)?)?$/i
-      )
-      if (pass) {
-        return true
-      }
-
-      return 'Please enter a valid phone number'
+    name: 'usage_information',
+    message: 'Enter some usage information'
+  },
+  {
+    type: 'input',
+    name: 'contrib_guidelines',
+    message: 'Enter some contribution guidelines'
+  },
+  {
+    type: 'input',
+    name: 'test_instructions',
+    message: 'Enter some test instructions'
+  },
+  {
+    type: 'list',
+    name: 'size',
+    message: 'What license do you want?',
+    choices: ['LGPL', 'GPL', 'MIT', 'Apache', 'BSD', 'CC-BY'],
+    filter (val) {
+      return val.toUpperCase()
     }
+  },
+  {
+    type: 'input',
+    name: 'username',
+    message: 'Enter your GitHub Username'
+  },
+  {
+    type: 'input',
+    name: 'email',
+    message: 'Enter your contact email'
   }
 ]
 
