@@ -91,7 +91,7 @@ ${answers.contrib_guidelines}
 ${answers.test_instructions}
 
 ## License
-[${answers.license}](https://github.com/${answers.username}/${answers.project_title}/LICENSE.md)
+[${answers.license}](https://github.com/${answers.username}/${answers.project_title}/blob/master/LICENSE.md)
   
 `
 
