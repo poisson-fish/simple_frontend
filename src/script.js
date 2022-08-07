@@ -2,7 +2,10 @@
  * Input prompt example
  */
 
+import fs from 'fs'
 import inquirer from 'inquirer'
+import { licenseTable } from './license.js'
+
 
 const questions = [
   {
@@ -40,7 +43,7 @@ const questions = [
   },
   {
     type: 'list',
-    name: 'size',
+    name: 'license',
     message: 'What license do you want?',
     choices: ['LGPL', 'GPL', 'MIT', 'Apache', 'BSD', 'CC-BY'],
     filter (val) {
@@ -60,5 +63,49 @@ const questions = [
 ]
 
 inquirer.prompt(questions).then((answers) => {
-  console.log(JSON.stringify(answers, null, '  '))
+
+  const readMe = 
+`# ${answers.project_title}
+## Description
+###### ${answers.project_description}
+
+## Table of Contents
+ - (Title)[https://github.com/${answers.username}/${answers.project_title}#${answers.project_title}]
+ - (Description)[https://github.com/${answers.username}/${answers.project_title}#Description]
+ - (Table of Contents)[https://github.com/${answers.username}/${answers.project_title}#Table of Contents]
+ - (Installation)[https://github.com/${answers.username}/${answers.project_title}#Installation]
+ - (Usage)[https://github.com/${answers.username}/${answers.project_title}#Usage]
+ - (Tests)[https://github.com/${answers.username}/${answers.project_title}#Tests]
+ - (License)[https://github.com/${answers.username}/${answers.project_title}#License]
+
+## Installation
+${answers.installation_instructions}
+
+## Usage
+${answers.usage_information}
+
+## Contributing
+${answers.contrib_guidelines}
+
+## Tests
+${answers.test_instructions}
+
+## License
+(${answers.license})[https://github.com/${answers.username}/${answers.project_title}/LICENSE.md]
+  
+`
+
+fs.writeFile('README.md', readMe, err => {
+  if (err) {
+    console.error(err);
+  }
+  console.log("Succesfully wrote README.md")
+});
+fs.writeFile('LICENSE.md', licenseTable.get(answers.license), err => {
+  if (err) {
+    console.error(err);
+  }
+  console.log("Succesfully wrote LICENSE.md")
+});
+  //console.log(JSON.stringify(answers, null, '  '))
 })

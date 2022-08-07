@@ -5,8 +5,7 @@
   "type": "module",
   "main": "src/script.js",
   "scripts": {
-    "test": "test",
-    "run": "run"
+    "test": "test"
   },
   "repository": {
     "type": "git",
