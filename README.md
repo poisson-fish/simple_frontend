@@ -4,12 +4,12 @@
 
 ## Table of Contents
  - [Title](https://github.com/udidifier/readmegen#readmegen)
- - [Description](https://github.com/udidifier/readmegen#Description)
- - [Table of Contents](https://github.com/udidifier/readmegen#Table of Contents)
- - [Installation](https://github.com/udidifier/readmegen#Installation)
- - [Usage](https://github.com/udidifier/readmegen#Usage)
- - [Tests](https://github.com/udidifier/readmegen#Tests)
- - [License](https://github.com/udidifier/readmegen#License)
+ - [Description](https://github.com/udidifier/readmegen#description)
+ - [Table of Contents](https://github.com/udidifier/readmegen#table-of-contents)
+ - [Installation](https://github.com/udidifier/readmegen#installation)
+ - [Usage](https://github.com/udidifier/readmegen#usage)
+ - [Tests](https://github.com/udidifier/readmegen#tests)
+ - [License](https://github.com/udidifier/readmegen#license)
 
 ## Installation
 `npm install` in the root directory.
@@ -21,7 +21,7 @@
 Pull request if you see improvements.
 
 ## Tests
-<No tests>
+<No test>
 
 ## License
 [CC-BY](https://github.com/udidifier/readmegen/LICENSE.md)

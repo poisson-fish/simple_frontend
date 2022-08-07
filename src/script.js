@@ -71,12 +71,12 @@ inquirer.prompt(questions).then((answers) => {
 
 ## Table of Contents
  - [Title](https://github.com/${answers.username}/${answers.project_title}#${answers.project_title})
- - [Description](https://github.com/${answers.username}/${answers.project_title}#Description)
- - [Table of Contents](https://github.com/${answers.username}/${answers.project_title}#Table of Contents)
- - [Installation](https://github.com/${answers.username}/${answers.project_title}#Installation)
- - [Usage](https://github.com/${answers.username}/${answers.project_title}#Usage)
- - [Tests](https://github.com/${answers.username}/${answers.project_title}#Tests)
- - [License](https://github.com/${answers.username}/${answers.project_title}#License)
+ - [Description](https://github.com/${answers.username}/${answers.project_title}#description)
+ - [Table of Contents](https://github.com/${answers.username}/${answers.project_title}#table-of-contents)
+ - [Installation](https://github.com/${answers.username}/${answers.project_title}#installation)
+ - [Usage](https://github.com/${answers.username}/${answers.project_title}#usage)
+ - [Tests](https://github.com/${answers.username}/${answers.project_title}#tests)
+ - [License](https://github.com/${answers.username}/${answers.project_title}#license)
 
 ## Installation
 ${answers.installation_instructions}
