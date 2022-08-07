@@ -70,13 +70,13 @@ inquirer.prompt(questions).then((answers) => {
 ###### ${answers.project_description}
 
 ## Table of Contents
- - (Title)[https://github.com/${answers.username}/${answers.project_title}#${answers.project_title}]
- - (Description)[https://github.com/${answers.username}/${answers.project_title}#Description]
- - (Table of Contents)[https://github.com/${answers.username}/${answers.project_title}#Table of Contents]
- - (Installation)[https://github.com/${answers.username}/${answers.project_title}#Installation]
- - (Usage)[https://github.com/${answers.username}/${answers.project_title}#Usage]
- - (Tests)[https://github.com/${answers.username}/${answers.project_title}#Tests]
- - (License)[https://github.com/${answers.username}/${answers.project_title}#License]
+ - [Title](https://github.com/${answers.username}/${answers.project_title}#${answers.project_title})
+ - [Description](https://github.com/${answers.username}/${answers.project_title}#Description)
+ - [Table of Contents](https://github.com/${answers.username}/${answers.project_title}#Table of Contents)
+ - [Installation](https://github.com/${answers.username}/${answers.project_title}#Installation)
+ - [Usage](https://github.com/${answers.username}/${answers.project_title}#Usage)
+ - [Tests](https://github.com/${answers.username}/${answers.project_title}#Tests)
+ - [License](https://github.com/${answers.username}/${answers.project_title}#License)
 
 ## Installation
 ${answers.installation_instructions}
@@ -91,7 +91,7 @@ ${answers.contrib_guidelines}
 ${answers.test_instructions}
 
 ## License
-(${answers.license})[https://github.com/${answers.username}/${answers.project_title}/LICENSE.md]
+[${answers.license}](https://github.com/${answers.username}/${answers.project_title}/LICENSE.md)
   
 `
 
