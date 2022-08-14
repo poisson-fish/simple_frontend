@@ -1,7 +1,7 @@
 {
-  "name": "readmegen",
+  "name": "simple_frontend",
   "version": "1.0.0",
-  "description": "A generator for Github readmes",
+  "description": "A simple frontend for a theoretical MySQL employee database.",
   "type": "module",
   "main": "src/script.js",
   "scripts": {
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/udidifier/readmegen.git"
+    "url": "git+https://github.com/udidifier/simple_frontend.git"
   },
   "author": "udidifier",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/udidifier/readmegen/issues"
+    "url": "https://github.com/udidifier/simple_frontend/issues"
   },
-  "homepage": "https://github.com/udidifier/readmegen#readme",
+  "homepage": "https://github.com/udidifier/simple_frontend#readme",
   "devDependencies": {
     "eslint": "^8.17.0",
     "eslint-config-standard": "^17.0.0",
