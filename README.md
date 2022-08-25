@@ -21,5 +21,5 @@
 Pull request if you see improvements.
 
 ## Tests
-No tests! (~‾⌣‾)~
+No tests! └[∵┌]└[ ∵ ]┘[┐∵]┘
   
