@@ -5,26 +5,15 @@ import Engineer from './Engineer.cjs'
 import Intern from './Intern.cjs'
 import body from './generators/body.cjs'
 
-const teamManagerQuestions = [
+const mainMenu = [
   {
-    type: 'input',
-    name: 'manager_name',
-    message: 'Enter a team manager name'
-  },
-  {
-    type: 'input',
-    name: 'manager_id',
-    message: 'Enter a team manager ID'
-  },
-  {
-    type: 'input',
-    name: 'manager_email',
-    message: 'Enter a team manager email'
-  },
-  {
-    type: 'input',
-    name: 'manager_officeNumber',
-    message: 'Enter a team manager office number'
+    type: 'list',
+    name: 'main_menu',
+    message: 'Choose selection...',
+    choices: ['View all departments', 'View all roles', 'View all employees', 'Add department', 'Add role', 'Add employee', 'Update role'],
+    filter (val) {
+      return val.split(' ').join('_').toUpperCase()
+    }
   }
 ]
 const engineerQuestions = [
@@ -32,55 +21,6 @@ const engineerQuestions = [
     type: 'input',
     name: 'engineer_name',
     message: 'Enter an engineer name'
-  },
-  {
-    type: 'input',
-    name: 'engineer_id',
-    message: 'Enter an engineer ID'
-  },
-  {
-    type: 'input',
-    name: 'engineer_email',
-    message: 'Enter an engineer email'
-  },
-  {
-    type: 'input',
-    name: 'engineer_github',
-    message: 'Enter a GitHub username for engineer'
-  }
-]
-const internQuestions = [
-  {
-    type: 'input',
-    name: 'intern_name',
-    message: 'Enter an intern name'
-  },
-  {
-    type: 'input',
-    name: 'intern_id',
-    message: 'Enter an intern ID'
-  },
-  {
-    type: 'input',
-    name: 'intern_email',
-    message: 'Enter an intern email'
-  },
-  {
-    type: 'input',
-    name: 'intern_school',
-    message: 'Enter a school for intern'
-  }
-]
-
-const employeeTypeQuestion = [
-  {
-    type: 'list',
-    name: 'employee_type',
-    message: 'Choose what type of employee to add',
-    choices: ['Engineer', 'Intern', 'Done'],
-    filter (val) {
-      return val.toUpperCase()
-    }
   }
 ]
 
@@ -99,19 +39,21 @@ function buildUX (fullTeam) {
 
 async function promptTeamMembers (fullTeam) {
   let askAgain = true
-  await inquirer.prompt(employeeTypeQuestion).then(async (employeeTypeAnswer) => {
-    switch (employeeTypeAnswer.employee_type) {
-      case 'ENGINEER':
-        await inquirer.prompt(engineerQuestions).then((engineerAnswers) => {
-          fullTeam.push(new Engineer(engineerAnswers.engineer_id, engineerAnswers.engineer_name, engineerAnswers.engineer_email, engineerAnswers.engineer_github))
-        })
+  await inquirer.prompt(mainMenu).then(async (mainMenuAnswer) => {
+    switch (mainMenuAnswer.main_menu) {
+      case 'VIEW_ALL_DEPARTMENTS':
+
         break
 
-      case 'INTERN':
-        await inquirer.prompt(internQuestions).then((internAnswers) => {
-          fullTeam.push(new Intern(internAnswers.intern_id, internAnswers.intern_name, internAnswers.intern_email, internAnswers.intern_school))
-        })
+      case 'VIEW_ALL_ROLES':
+
         break
+
+      case 'VIEW_ALL_EMPLOYEES':
+
+        break
+        
+
 
       case 'DONE':
         askAgain = false
