@@ -1,6 +1,7 @@
 import inquirer from 'inquirer'
 // get the client
 import mysql from 'mysql2'
+// eslint-disable-next-line no-unused-vars
 import cTable from 'console.table'
 
 const mainMenu = [
