@@ -1,9 +1,7 @@
 import fs from 'fs'
 import inquirer from 'inquirer'
-import Manager from './Manager.cjs'
-import Engineer from './Engineer.cjs'
-import Intern from './Intern.cjs'
-import body from './generators/body.cjs'
+// get the client
+import mysql from 'mysql2'
 
 const mainMenu = [
   {
@@ -37,12 +35,19 @@ function buildUX (fullTeam) {
   console.log(wholePage)
 }
 
-async function promptTeamMembers (fullTeam) {
+async function promptMainMenu (connection, fullTeam) {
   let askAgain = true
   await inquirer.prompt(mainMenu).then(async (mainMenuAnswer) => {
     switch (mainMenuAnswer.main_menu) {
       case 'VIEW_ALL_DEPARTMENTS':
-
+        // simple query
+        connection.query(
+          'SELECT * FROM `table` WHERE `name` = "Page" AND `age` > 45',
+          function (_err, results, fields) {
+            console.log(results) // results contains rows returned by server
+            console.log(fields) // fields contains extra meta data about results, if available
+          }
+        )
         break
 
       case 'VIEW_ALL_ROLES':
@@ -52,8 +57,6 @@ async function promptTeamMembers (fullTeam) {
       case 'VIEW_ALL_EMPLOYEES':
 
         break
-        
-
 
       case 'DONE':
         askAgain = false
@@ -61,14 +64,19 @@ async function promptTeamMembers (fullTeam) {
     }
   })
   if (askAgain) {
-    await promptTeamMembers(fullTeam)
+    await promptMainMenu(connection, fullTeam)
   }
 }
 function run () {
   const fullTeam = []
-  inquirer.prompt(teamManagerQuestions).then(async (teamManagerAnswer) => {
-    fullTeam.push(new Manager(teamManagerAnswer.manager_id, teamManagerAnswer.manager_name, teamManagerAnswer.manager_email, teamManagerAnswer.manager_officeNumber))
-    await promptTeamMembers(fullTeam)
-  }).then(() => buildUX(fullTeam))
+
+  // create the connection to database
+  const connection = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    database: 'test'
+  })
+
+  promptMainMenu(connection, fullTeam)
 }
 run()
