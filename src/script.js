@@ -1,4 +1,3 @@
-import fs from 'fs'
 import inquirer from 'inquirer'
 // get the client
 import mysql from 'mysql2'
