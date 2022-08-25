@@ -10,7 +10,7 @@ const mainMenu = [
     name: 'main_menu',
     message: 'Choose selection...',
     choices: ['View all departments', 'View all roles', 'View all employees', 'Add department', 'Add role', 'Add employee', 'Update employee', 'Done'],
-    filter(val) {
+    filter (val) {
       return val.split(' ').join('_').toUpperCase()
     }
   }
@@ -71,10 +71,10 @@ const updateEmployee = [
     type: 'input',
     name: 'role_id',
     message: 'Enter a new role for this employee'
-  },
+  }
 ]
 
-async function promptMainMenu(connection, fullTeam) {
+async function promptMainMenu (connection, fullTeam) {
   let askAgain = true
   await inquirer.prompt(mainMenu).then(async (mainMenuAnswer) => {
     switch (mainMenuAnswer.main_menu) {
@@ -176,7 +176,7 @@ async function promptMainMenu(connection, fullTeam) {
   }
 }
 
-function runMigration(connection) {
+function runMigration (connection) {
   connection.query(
     `CREATE TABLE IF NOT EXISTS DEPARTMENTS (
       id INT AUTO_INCREMENT PRIMARY KEY,
@@ -227,7 +227,7 @@ function runMigration(connection) {
   )
 }
 
-function run() {
+function run () {
   const fullTeam = []
 
   // create the connection to database
